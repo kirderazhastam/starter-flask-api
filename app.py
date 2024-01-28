@@ -1,8 +1,13 @@
 from flask import Flask
 import os
+import requests
 
 app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'Hello, world!'
+    url = "thoughtful-train-tick.cyclic.app/duc"
+    req = requests.get(url)
+    return req.text
+
+
